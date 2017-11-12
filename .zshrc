@@ -7,6 +7,9 @@ alias brewup="brew update; brew upgrade; brew prune; brew cleanup; brew doctor"
 # Docker
 alias dockerclean="docker system prune -f && docker volume prune -f"
 
+# Backup
+alias backup="rsync -a --progress --delete ~/ /Volumes/Oliver\'s\ Backup\ Disk/oliver/"
+
 # Run Docker Containers
 php() {
     docker_is_running "php" && run_local_docker "php" "$@" || start_new_docker_container "php" "$@"
